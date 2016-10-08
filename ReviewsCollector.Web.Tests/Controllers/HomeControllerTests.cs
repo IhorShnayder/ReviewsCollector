@@ -78,7 +78,7 @@ namespace ReviewsCollector.Web.Tests.Controllers
             var model = homeController.Reviews().Model as IEnumerable<Review>;
 
             //Assert
-            Assert.IsInstanceOf(typeof(IEnumerable<Review>), model);
+            Assert.IsNotNull(model);
             Assert.AreEqual(_reviewItems.Count(), model.Count());
         }
     }
