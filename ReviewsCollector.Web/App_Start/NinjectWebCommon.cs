@@ -65,8 +65,7 @@ namespace ReviewsCollector.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDatabaseContext>().To<DatabaseContext>();
-            kernel.Bind<UnitOfWork>().ToSelf().WithConstructorArgument("dbContext", ctx => ctx.Kernel.Get<IDatabaseContext>());
-            kernel.Bind<IReviewsRepository>().To<ReviewsRepository>().WithConstructorArgument("unitOfWork", ctx => ctx.Kernel.Get<UnitOfWork>()); ;            
+            kernel.Bind<IUnitOfWork>().To<UnitOfWork>().WithConstructorArgument("dbContext", ctx => ctx.Kernel.Get<IDatabaseContext>());
         }        
     }
 }

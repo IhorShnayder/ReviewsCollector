@@ -131,7 +131,7 @@
     <Content Include="ConnectionString.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Home\Reviews.cshtml" />
+    <Content Include="Views\Reviews\ReviewsList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -147,6 +147,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

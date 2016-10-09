@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ReviewsCollector.Domain.Entities.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace ReviewsCollector.Domain.Entities
 {
@@ -10,5 +11,7 @@ namespace ReviewsCollector.Domain.Entities
         public string Description { get; set; }
 
         public string Content { get; set; }
+
+        public EntityStatusEnum Status { get; set; }
     }
 }

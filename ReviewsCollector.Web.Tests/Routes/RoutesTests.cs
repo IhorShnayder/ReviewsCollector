@@ -76,7 +76,7 @@ namespace ReviewsCollector.Web.Tests.Routes
         public void TestIncomingRoutes()
         {
             TestRouteMatch("/", "Home", "Index");
-            TestRouteMatch("/Reviews", "Home", "Reviews");
+            TestRouteMatch("/Reviews", "Reviews", "ReviewsList");
         }
     }
 }

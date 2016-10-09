@@ -7,7 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace ReviewsCollector.DataAccess.Tests
+namespace ReviewsCollector.Tests
 {
     public class CustomDbSetForBaseEntitiy<T> : DbSet<T>, IQueryable, IEnumerable<T> where T : BaseEntity
     {

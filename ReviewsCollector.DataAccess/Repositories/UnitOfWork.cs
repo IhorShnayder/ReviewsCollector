@@ -3,7 +3,7 @@ using ReviewsCollector.Domain.Interfaces;
 
 namespace ReviewsCollector.DataAccess.Repositories
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private IDatabaseContext _dbContext;
         private IReviewsRepository _reviews;
@@ -29,7 +29,7 @@ namespace ReviewsCollector.DataAccess.Repositories
             get
             {
                 if (_reviews == null)
-                    _reviews = new ReviewsRepository(this);
+                    _reviews = new ReviewsRepository(this, DbContext);
                 return _reviews;
             }
         }

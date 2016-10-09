@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201610022034133_InitMigration.Designer.cs">
       <DependentUpon>201610022034133_InitMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610082039462_AddStatusToReview.cs" />
+    <Compile Include="Migrations\201610082039462_AddStatusToReview.Designer.cs">
+      <DependentUpon>201610082039462_AddStatusToReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -82,6 +86,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610022034133_InitMigration.resx">
       <DependentUpon>201610022034133_InitMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610082039462_AddStatusToReview.resx">
+      <DependentUpon>201610082039462_AddStatusToReview.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,11 +6,11 @@ namespace ReviewsCollector.DataAccess.Repositories
     public class BaseRepository
     {
         protected IDatabaseContext _dbContext;
-        protected UnitOfWork _unitOfWork;
+        protected IUnitOfWork _unitOfWork;
         
-        public BaseRepository(UnitOfWork unitOfWork)
+        public BaseRepository(IUnitOfWork unitOfWork, IDatabaseContext dbContext)
         {
-            _dbContext = unitOfWork.DbContext;
+            _dbContext = dbContext;
             _unitOfWork = unitOfWork;
         }
 

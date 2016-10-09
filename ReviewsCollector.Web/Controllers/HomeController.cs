@@ -1,12 +1,12 @@
-﻿using ReviewsCollector.DataAccess.Repositories;
+﻿using ReviewsCollector.Domain.Interfaces;
 using System.Web.Mvc;
 
 namespace ReviewsCollector.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private UnitOfWork _u;
-        public HomeController(UnitOfWork u)
+        private IUnitOfWork _u;
+        public HomeController(IUnitOfWork u)
         {
             _u = u;
         }
@@ -14,13 +14,6 @@ namespace ReviewsCollector.Web.Controllers
         public ViewResult Index()
         {
             return View("Index");
-        }
-
-        public ViewResult Reviews()
-        {
-            var allReviews = _u.Reviews.GetAll();
-
-            return View("Reviews", allReviews);
         }
     }
 }
