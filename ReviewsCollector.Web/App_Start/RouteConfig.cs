@@ -15,8 +15,13 @@ namespace ReviewsCollector.Web
 
             routes.MapRoute(
                 name: "",
-                url: "reviews",
+                url: "Reviews",
                 defaults: new { controller = "Reviews", action = "ReviewsList" });
+
+            routes.MapRoute(
+                name: "",
+                url: "Users/{action}",
+                defaults: new { controller = "Account", action = "UsersList" });
         }
     }
 }

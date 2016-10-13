@@ -1,15 +1,25 @@
-﻿using ReviewsCollector.DataAccess.Interfaces;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using ReviewsCollector.DataAccess.Identity;
+using ReviewsCollector.DataAccess.Interfaces;
 using ReviewsCollector.Domain.Entities;
 using System.Data.Entity;
 
 namespace ReviewsCollector.DataAccess
 {
-    public class DatabaseContext : DbContext, IDatabaseContext
+    public class DatabaseContext : IdentityDbContext<ApplicationUser>, IDatabaseContext
     {
         public DatabaseContext() : base("AzureConnectionString")
         {
 
         }
+      
+        public static DatabaseContext Create()
+        {
+            return new DatabaseContext();
+        }
+
         public DbSet<Review> Reviews { get; set; }
     }
 }
+
+
