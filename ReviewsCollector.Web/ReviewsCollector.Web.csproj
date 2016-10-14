@@ -176,6 +176,12 @@
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <None Include="Properties\PublishProfiles\booksx - Web Deploy.pubxml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <None Include="Properties\PublishProfiles\LocalIIS.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,13 +198,18 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\ReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\IdentityHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Identity\ChangeRoleMembership.cs" />
+    <Compile Include="ViewModels\Identity\EditRole.cs" />
+    <Compile Include="ViewModels\Identity\LoginUser.cs" />
     <Compile Include="ViewModels\Identity\CreateUser.cs" />
   </ItemGroup>
   <ItemGroup>

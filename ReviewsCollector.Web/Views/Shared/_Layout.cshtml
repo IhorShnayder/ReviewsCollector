@@ -23,9 +23,11 @@
                 </button>
                 @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Reviews", "ReviewsList", "Reviews", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Users", "UsersList", "Account", new { area = "" }, new { @class = "navbar-brand" })
-
-
+                @if (User.IsAdmin())
+                {
+                    @Html.ActionLink("Users", "UsersList", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Roles", "Index", "Roles", new { area = "" }, new { @class = "navbar-brand" })
+                }
             </div>           
         </div>
     </div>

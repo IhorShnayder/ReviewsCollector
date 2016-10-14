@@ -16,7 +16,7 @@ namespace ReviewsCollector.Web.Tests.Controllers
         public void TestSetup()
         {
             Mock<IReviewsRepository> reviewsRepositoryMock = new Mock<IReviewsRepository>();
-            reviewsRepositoryMock.Setup(f => f.GetAll()).Returns(new List<Review>());
+            reviewsRepositoryMock.Setup(f => f.GetAll(null)).Returns(new List<Review>());
             
             Mock<IUnitOfWork> unitOfWorkMock = new Mock<IUnitOfWork>();
             unitOfWorkMock.Setup(f => f.Reviews).Returns(reviewsRepositoryMock.Object);

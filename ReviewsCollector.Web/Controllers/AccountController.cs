@@ -3,13 +3,13 @@ using Microsoft.AspNet.Identity.Owin;
 using ReviewsCollector.DataAccess.Identity;
 using ReviewsCollector.Domain.Interfaces;
 using ReviewsCollector.Web.ViewModels.Identity;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace ReviewsCollector.Web.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AccountController : Controller
     {
         private IUnitOfWork _u;
@@ -17,6 +17,7 @@ namespace ReviewsCollector.Web.Controllers
         {
             _u = u;
         }
+
         private ApplicationUserManager UserManager
         {
             get
@@ -25,10 +26,56 @@ namespace ReviewsCollector.Web.Controllers
             }
         }
 
+        private ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+        }
+
         public ViewResult UsersList()
         {
             return View(UserManager.Users);
         }
+
+        [AllowAnonymous]
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.returnUrl = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginModel details, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                ApplicationUser user = await UserManager.FindAsync(details.Name, details.Password);
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "Invalid name or password.");
+                }
+                else
+                {
+                    await SignInManager.SignInAsync(user, false, false);
+
+                    return Redirect(returnUrl);
+                }
+            }
+            ViewBag.returnUrl = returnUrl;
+            return View(details);
+        }
+
+        [Authorize]
+        public ActionResult Logout()
+        {
+            SignInManager.AuthenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
 
         public ActionResult Create()
         {

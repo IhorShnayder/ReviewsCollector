@@ -83,7 +83,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Identity\ApplicationRole.cs" />
+    <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
+    <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\IdentityConfig.cs" />
     <Compile Include="Interfaces\IDatabaseContext.cs" />
@@ -98,6 +101,10 @@
     <Compile Include="Migrations\201610122021337_AddIdentity.cs" />
     <Compile Include="Migrations\201610122021337_AddIdentity.Designer.cs">
       <DependentUpon>201610122021337_AddIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610131723423_AddRoles.cs" />
+    <Compile Include="Migrations\201610131723423_AddRoles.Designer.cs">
+      <DependentUpon>201610131723423_AddRoles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,8 +143,10 @@
     <EmbeddedResource Include="Migrations\201610122021337_AddIdentity.resx">
       <DependentUpon>201610122021337_AddIdentity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610131723423_AddRoles.resx">
+      <DependentUpon>201610131723423_AddRoles.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
