@@ -1,6 +1,5 @@
 ﻿using ReviewsCollector.DataAccess.Interfaces;
 using ReviewsCollector.Domain.Entities;
-using ReviewsCollector.Domain.Entities.Enums;
 using ReviewsCollector.Domain.Interfaces;
 using System;
 using System.Collections.Generic;

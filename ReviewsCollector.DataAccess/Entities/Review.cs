@@ -1,5 +1,5 @@
-﻿using ReviewsCollector.Domain.Entities.Enums;
-using System.Collections.Generic;
+﻿using ReviewsCollector.DataAccess.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace ReviewsCollector.Domain.Entities
@@ -15,6 +15,8 @@ namespace ReviewsCollector.Domain.Entities
 
         public EntityStatusEnum Status { get; set; }
 
-        public ApplicationUser Author
+        public string AuthorId { get; set; }
+
+        public virtual ApplicationUser Author { get; set; }
     }
 }

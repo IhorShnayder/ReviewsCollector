@@ -3,7 +3,6 @@ using NUnit.Framework;
 using ReviewsCollector.DataAccess.Interfaces;
 using ReviewsCollector.DataAccess.Repositories;
 using ReviewsCollector.Domain.Entities;
-using ReviewsCollector.Domain.Entities.Enums;
 using ReviewsCollector.Domain.Interfaces;
 using ReviewsCollector.Tests;
 using System.Collections.Generic;

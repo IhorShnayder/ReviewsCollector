@@ -220,14 +220,6 @@
       <Project>{196B544C-322D-4024-B3EF-5E680575E305}</Project>
       <Name>ReviewsCollector.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Entities\ReviewsCollector.Domain.Entities.csproj">
-      <Project>{b62a8f27-4e9a-4e2b-9ba8-671f1859108d}</Project>
-      <Name>ReviewsCollector.Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Interfaces\ReviewsCollector.Domain.Interfaces.csproj">
-      <Project>{21464088-EBE0-4217-9828-80EB147A79FB}</Project>
-      <Name>ReviewsCollector.Domain.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

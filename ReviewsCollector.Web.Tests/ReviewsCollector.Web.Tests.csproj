@@ -112,14 +112,6 @@
       <Project>{196B544C-322D-4024-B3EF-5E680575E305}</Project>
       <Name>ReviewsCollector.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Entities\ReviewsCollector.Domain.Entities.csproj">
-      <Project>{B62A8F27-4E9A-4E2B-9BA8-671F1859108D}</Project>
-      <Name>ReviewsCollector.Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Interfaces\ReviewsCollector.Domain.Interfaces.csproj">
-      <Project>{21464088-EBE0-4217-9828-80EB147A79FB}</Project>
-      <Name>ReviewsCollector.Domain.Interfaces</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ReviewsCollector.TestsBase\ReviewsCollector.TestsBase.csproj">
       <Project>{7F946942-06B4-42C7-A672-72E7FF4FB4AB}</Project>
       <Name>ReviewsCollector.TestsBase</Name>

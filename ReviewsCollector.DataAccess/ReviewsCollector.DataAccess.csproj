@@ -83,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Review.cs" />
+    <Compile Include="Entities\EntityStatusEnum.cs" />
     <Compile Include="Identity\ApplicationRole.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
@@ -90,6 +93,8 @@
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\IdentityConfig.cs" />
     <Compile Include="Interfaces\IDatabaseContext.cs" />
+    <Compile Include="Interfaces\IReviewsRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\201610022034133_InitMigration.cs" />
     <Compile Include="Migrations\201610022034133_InitMigration.Designer.cs">
       <DependentUpon>201610022034133_InitMigration.cs</DependentUpon>
@@ -105,6 +110,10 @@
     <Compile Include="Migrations\201610131723423_AddRoles.cs" />
     <Compile Include="Migrations\201610131723423_AddRoles.Designer.cs">
       <DependentUpon>201610131723423_AddRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610150820275_BindReviewToUser.cs" />
+    <Compile Include="Migrations\201610150820275_BindReviewToUser.Designer.cs">
+      <DependentUpon>201610150820275_BindReviewToUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,16 +133,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Entities\ReviewsCollector.Domain.Entities.csproj">
-      <Project>{B62A8F27-4E9A-4E2B-9BA8-671F1859108D}</Project>
-      <Name>ReviewsCollector.Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ReviewsCollector.Domain.Interfaces\ReviewsCollector.Domain.Interfaces.csproj">
-      <Project>{21464088-EBE0-4217-9828-80EB147A79FB}</Project>
-      <Name>ReviewsCollector.Domain.Interfaces</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201610022034133_InitMigration.resx">
       <DependentUpon>201610022034133_InitMigration.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610131723423_AddRoles.resx">
       <DependentUpon>201610131723423_AddRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610150820275_BindReviewToUser.resx">
+      <DependentUpon>201610150820275_BindReviewToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

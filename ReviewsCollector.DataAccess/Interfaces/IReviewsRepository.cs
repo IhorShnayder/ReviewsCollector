@@ -1,5 +1,4 @@
 ﻿using ReviewsCollector.Domain.Entities;
-using ReviewsCollector.Domain.Entities.Enums;
 using System.Collections.Generic;
 
 namespace ReviewsCollector.Domain.Interfaces

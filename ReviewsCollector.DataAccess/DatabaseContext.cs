@@ -25,6 +25,18 @@ namespace ReviewsCollector.DataAccess
         }
 
         public DbSet<Review> Reviews { get; set; }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Review>()
+                .HasOptional(f => f.Author)
+                .WithMany(f => f.Reviews)
+                .HasForeignKey(f => f.AuthorId)
+                .WillCascadeOnDelete(false);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
 
